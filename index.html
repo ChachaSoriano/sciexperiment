@@ -1,0 +1,2932 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.mobile-1.4.0-rc.1.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+	
+	<script src="js/jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="../source/scripts/js.js"></script>
+	<script type="text/javascript" src="../source/scripts/ui.js"></script>
+	<script src="jquery-1.4.4.min.js" type="text/javascript"></script>
+	
+		<style>
+div.ex {
+    width: 93%;
+    padding: 10px;
+    border: 5px solid white;
+    margin: auto;
+}
+#forImage{
+width: 93%;
+    padding: 10px;
+	border: 5px solid white;
+    margin: auto;
+	height:100px;
+}
+#togglethis{
+width: 93%;
+    padding: 10px;
+	border: 5px solid white;
+    margin: auto;
+	height:100%;
+}
+
+#btnPlay,#logout,#leaderBoard,#	help{
+width: 90%;
+    padding: 10px;
+	border: 5px solid #08387c;
+	background-color:#08387c;
+    margin: auto;
+	height:50px;
+	margin-left:auto;
+	margin-top:auto;
+	font-size: 40px;
+}
+
+#btnStartAnimals{
+width: 90%;
+    padding: 10px;
+	border: 5px solid #bd0613;
+	background-color:#bd0613;
+    margin: auto;
+	height:100%;
+	margin-left:auto;
+	margin-top:auto;
+}
+#homeBg{
+	position:fixed;
+	height:100%;
+	width:100%;
+	background-image:url(css/bg.png);
+	background-position: top center;
+	background-size: cover;
+}
+#result,#gameBg,#bgScores{
+	position:fixed;
+	height:100%;
+	width:100%;
+	background-image:url(css/bg.png);
+	background-position: top center;
+	background-size: cover;
+	
+}
+
+#relative,#relative2,#relative3 {
+    position: relative;
+    top: 10px;
+	color:#ff6666;
+}
+	</style>
+	</head>
+	<body>
+	
+<!--MAIN PAGE-->
+<div data-role="page" id="index" data-theme="f" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+<div data-role="header" data-position="relative" data-add-back-btn="false" >
+
+			<h1>SciExperiment</h1>
+        </div>
+		
+		
+ <div data-role="content" align="center" >
+	<img src="images/bgg.png" width="100%">
+ </div>
+<div style=" margin: 5%; width: 90%; height: 90%">
+	<a href="#menu" data-role="button" data-transition="fade" data-icon="flat-new"  data-theme="f" style="font-family: 'Century Gothic'">Science Experiments</a>
+	<a href="#game" data-role="button" data-transition="fade" data-icon="flat-cmd"  data-theme="d" style="font-family: 'Century Gothic'">Quiz Game</a>
+	<a href="#about" data-role="button" data-transition="pop" data-icon="user" data-theme="g" style="font-family: 'Century Gothic'">About</a>
+
+</div>
+</div>
+
+<!--about-->
+<div data-role="page" id="about" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+	<div data-role="content" align="center">
+	<h4 style="font-family:'Century Gothic';">Developed by:</h4>
+	<p align="center" style="font-family:'Century Gothic';">
+	Paul Albert Horfilla<br />Gordon College
+	</p>	
+	</div>
+	<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<!--Menu-->
+<div data-role="page" id="menu" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+	<div data-role="content">
+		<div data-role="content" >
+		<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;">Why not try a fun science experiment right now?</h2>
+		<p align="justify" style="font-family: 'Century Gothic'"><i>Here's list of great science experiments with instructions that you can do right at home or at school. In order for your science experiment to be safe and successful, be sure to:<br />get your parent's or teacher's permission, and their help follow the directions as written.<br /><br />Click on any experiment to view it.</i></p><br/>
+			<ul data-role="listview" data-theme="b">
+			<li><a href="#list1"><h5 style="font-family: 'Century Gothic'">Build a Tabletop Hovercraft</h5></a></li>
+			<li><a href="#list2"><h5 style="font-family: 'Century Gothic'">Rapid Color Changing Chemistry</h5></a></li>
+			<li><a href="#list3"><h5 style="font-family: 'Century Gothic'">Build a Film Canister Rocket</h5></a></li>
+			<li><a href="#list4"><h5 style="font-family: 'Century Gothic'">The Magic Ketchup Experiment</h5></a></li>
+			<li><a href="#list5"><h5 style="font-family: 'Century Gothic'">Make your own Rock Candy</h5></a></li>
+			<li><a href="#list6"><h5 style="font-family: 'Century Gothic'">Blobs in a Bottle</h5></a></li>
+			<li><a href="#list7"><h5 style="font-family: 'Century Gothic'">The Incredible Hoop Glider</h5></a></li>
+			<li><a href="#list8"><h5 style="font-family: 'Century Gothic'">Make a Levitating Orb</h5></a></li>
+			<li><a href="#list9"><h5 style="font-family: 'Century Gothic'">Roll a Can with Static Electricity</h5></a></li>
+			<li><a href="#list10"><h5 style="font-family: 'Century Gothic'">Clean Pennies with Vinegar</h5></a></li>
+			<li><a href="#list11"><h5 style="font-family: 'Century Gothic'">Make Plastic Milk</h5></a></li>
+			<li><a href="#list12"><h5 style="font-family: 'Century Gothic'">Make a Balloon Rocket</h5></a></li>
+			<li><a href="#list13"><h5 style="font-family: 'Century Gothic'">Try Some Lava in a Cup</h5></a></li>
+			<li><a href="#list14"><h5 style="font-family: 'Century Gothic'">Make an Electromagnet</h5></a></li>
+			<li><a href="#list15"><h5 style="font-family: 'Century Gothic'">Blow up a Balloon with Yeast</h5></a></li>
+			<li><a href="#list16"><h5 style="font-family: 'Century Gothic'">Make a Paper clip Float</h5></a></li>
+			<li><a href="#list17"><h5 style="font-family: 'Century Gothic'">Color Symphony</h5></a></li>
+			<li><a href="#list18"><h5 style="font-family: 'Century Gothic'">Bend Water with Static Electricity</h5></a></li>
+			<li><a href="#list19"><h5 style="font-family: 'Century Gothic'">Make your own Volcano</h5></a></li>
+			<li><a href="#list20"><h5 style="font-family: 'Century Gothic'">The Exploding Lunch Bag</h5></a></li>
+			</ul>
+			</div>
+		</div>
+	<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+
+<div data-role="page" id="list1" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>Build a Tabletop Hovercraft</b></h2>
+			<center><img src="images/1.png" width="100%"></center>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- An old CD or DVD disc<br />
+			- A 9” balloon<br />
+			- A pop-top cap from a liquid soap bottle or a water bottle<br />
+			- A hot glue gu<br />
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. If you are using the cap from a water bottle, cover the center hole of the CD with a piece of tape and poke about 6 holes in the tape with a push-pin or small nail. This will slow down the flow of air and allow your hovercraft to hover longer.<br /><br />
+			2. Use the hot glue gun to glue the cap to the center of the CD or DVD disc. Create a good seal to keep air from escaping.<br /><br />
+			3. Blow up the balloon all the way and pinch the neck of it. (Don’t tie it.)<br /><br />
+			4. Make sure the pop-top is closed and fit the neck of the balloon over the pop-up portion of the cap. (This is usually easier with 2 people)<br />
+			5. That’s it! When your ready to commence hovering, simply put the craft on a smooth surface and pop the top open. 
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			The air flow created by the balloon causes a cushion of moving air between the disc and the surface. This lifts the CD and reduces the friction which allows the disc to hover freely. Large scale hovercraft are capable of travelling over land, snow and water. 
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list2" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>Rapid Color Changing Chemistry</b></h2>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			Sometimes it’s hard to tell SCIENCE from MAGIC - and this little demonstration is a great example of that. In this experiment you will watch an almost clear liquid suddenly turn dark blue in a flash. It takes a bit of preparation, and probably a trip to the pharmacy for materials, but we think it’s worth it.
+			</p>
+			<center><img src="images/2.jpg" width="100%"></center>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			<b>IMPORTANT SAFETY INFORMATION:</b> This experiment should only be done with the help of an adult. Iodine will stain just about anything it touches and it can be hazardous. Hydrogen peroxide can cause eye and skin irritation - safety goggles are needed throughout the experiment. Be sure your helpful adult reads the caution labels on each container.
+			</p><br />
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- 3 clear plastic cups 4 ounces or larger<br />
+			- A 1000 mg Vitamin C tablet from the pharmacy (you can also use two 500mg)<br />
+			- Tincture of iodine (2%) also from the pharmacy<br />
+			- Hydrogen peroxide (3%) yep, also from the pharmacy<br />
+			- Liquid laundry starch (see below for alternatives)<br />
+			- Safety goggles<br />
+			- Measuring spoons<br />
+			- Measuring cup<br />
+			- An adult helper<br />
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Put on those safety goggles and mash the 1000 mg Vitamin C tablet by placing it into a plastic bag and crushing it with a rolling pin or the back of a large spoon. Get it into as much of a fine powder as possible. Then put all the powder in the first cup and add 2 ounces (60 ml) of warm water. Stir for at least 30 seconds. (The water may be a little cloudy) Let’s call this “LIQUID A”<br /><br />
+			2. Now put 1 teaspoon (5 ml) of your LIQUID A into a new cup and add to it: 2 oz (60 ml) of warm water and 1 teaspoon (5 ml) of the iodine. Notice the brown iodine turned clear! Let’s call this “LIQUID B.” By the way, you’re done with LIQUID A - you can put it aside.<br /><br />
+			3. In the last cup, mix 2 oz of warm water, 1 Tablespoon (15 ml) of the hydrogen peroxide and 1/2 teaspoon (2.5 ml) of the liquid starch. This is, you guessed it, “LIQUID C”<br /><br />
+			4. Okay, that was a lot of preparation, on to the fun part. Gather the friends and family and pour all of LIQUID B into LIQUID C. Then pour them back and fourth between the 2 cups a few times. Place the cup down and observe….be patient....somewhere between a few seconds and a few minutes, the liquid will suddenly turn dark blue! 
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			This is an example of the chemical reaction know as the IODINECLOCK REACTION. It is called a clock reaction because you can change the amount if time it takes for the liquids to turn blue. (see experiments below) The chemistry of the demonstration gets a bit complicated, but basically it is a battle of chemistry between the starch which is trying to turn the iodine blue, and the Vitamin C which is keeping it from turning blue. Eventually the Vitamin C loses and, bam! - you get instant blueness.
+			<br /><br />
+			<b>Note:</b> If you do not have liquid starch, you can also use 1/2 teaspoon of corn starch or potato starch. The liquids will be more cloudy and the reaction will happen a bit more slowly, but it’s still impressive.
+			<br /><br />
+			<b>Clean up:</b> Carefully pour all liquids down the drain with plenty of water and wash your hands. Recycle the cups or dispose of them in the trash. 
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list3" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>Build a Film Canister Rocket</b></h2>
+			<center><img src="images/3.gif" width="100%"></center>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- One empty 35mm plastic film canister and lid. These are getting harder to find, but stores that develop film should have some. (The white canisters work much better than the black ones do.)<br />
+			- One fizzing antacid tablet (such as Alka-Seltzer - Get this from your parents)<br />
+			- Water<br />
+			- Safety goggles <br />
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Put on those safety goggles and head outside - no really, when this works, that film canister really flies! If you want to try the indoor version, do not turn the canister upside down in step 5. <br /><br />
+			2. Break the antacid tablet in half.<br /><br />
+			3. Remove the lid from the film canister and put a teaspoon (5 ml) of water into the canister.<br /><br />
+			<b><i>Do the next 2 steps quickly</i></b><br /><br />
+			4. Drop the tablet half into the canister and snap the cap onto the canister (make sure that it snaps on tightly.)<br /><br />
+			5. Quickly put the canister on the ground CAP SIDE DOWN and STEP BACK at least 2 meters.<br /><br />
+			6. About 10 seconds later, you will hear a POP! and the film canister will launch into the air! <br /><br />
+			<b>Caution:</b> If it does not launch, wait at least 30 second before examining the canister. Usually the cap is not on tight enough and the build up of gas leaked out.
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			There's nothing like a little rocket science to add some excitement to the day. When you add the water it starts to dissolve the alka-seltzer tablet. This creates a gas call carbon dioxide. As the carbon dioxide is being released, it creates pressure inside the film canister. The more gas that is made, the more pressure builds up until the cap it blasted down and the rocket is blasted up. This system of thrust is how a real rocket works whether it is in outer space or here in the earth's atmosphere. Of course, real rockets use rocket fuel. You can experiment controlling the rocket's path by adding fins and a nose cone that you can make out of paper. If you like this experiment, try the Exploding Lunch Bag. Be safe and have fun!
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list4" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>The Magic Ketchup Experiment</b></h2>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			You can make a pack of ketchup float and sink at your command while it's sealed inside a bottle!
+			</p>
+			<center><img src="images/4.gif" width="100%"></center>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- A 1 liter plastic bottle <br />
+			- Ketchup pack from a fast food restaurant<br />
+			- Salt (using Kosher salt helps keep the water from becoming foggy) <br />
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Remove any labels from the bottle and fill it all the way to the top with water. <br /><br />
+			2. Add a ketchup pack to the bottle.<br /><br />
+			3. If the ketchup floats, you're all set - go to step 4. If the ketchup sinks in the bottle, go to step 5. <br /><br />
+			4. For the floating ketchup pack simply screw the cap on the bottle and squeeze the sides of the bottle hard. If the ketchup sinks when you squeeze it, and floats when you release it, congratulations, you're ready to show it off. If it does not sink when you squeeze it, try a different kind of ketchup pack or try a mustard or soy sauce pack.<br /><br />
+			5.  If the ketchup pack sinks, add about 3 tablespoons (45 ml) of salt to the bottle. Cap it and shake it up until the salt dissolves. (Kosher salt will keep the water from getting too cloudy, although it will usually clear up over time if using regular table salt.)<br /><br />
+			6.  Continue adding salt, a few tablespoons at a time until the ketchup is just barely floating to the top of the bottle.<br /><br />
+			7.  Once it is consistently floating, make sure the bottle is filled to the top with water, and then cap it tightly. <br /><br />
+			8.  Now squeeze the bottle. The magic ketchup should sink when you squeeze the bottle and float up when you release it. With some practice you can get it to stop in the middle of the bottle. 
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			This experiment is all about buoyancy and density. Buoyancy describes whether objects float or sink. This usually describes how things float in liquids, but it can also describe how things float or sink in and various gasses.
+			<br /><br />
+			Density deals with the amount of mass an object has. Adding salt to the water adjusted the water's density to get the ketchup to float. Sound complicated? It is, but here's the basics on the ketchup demo...there is a little bubble inside of the ketchup packet. As we know bubbles float, and the bubble in the ketchup sometimes keeps the heavy packet from sinking. When you squeeze the bottle hard enough, you put pressure on the packet. That causes the bubble to get smaller and the entire packet to become MORE DENSE than the water around it and the packet sinks. When you release the pressure, the bubble expands, making the packet less dense (and more buoyant) and, alas, it floats back up. This demonstration is sometimes known as a CARTESIAN DIVER. 
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list5" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>Make your own Rock Candy</b></h2>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			THIS EXPERIMENT REQUIRES ADULT HELP. IT DEALS WITH VERY HOT LIQUIDS. BE SMART AND BE SAFE - ONLY DO THIS WITH ADULT HELP
+			</p>
+			<center><img src="images/5.jpg" width="100%"></center>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- A wooden skewer (you can also use a clean wooden chopstick) <br />
+			- A clothespin <br />
+			- 1 cup of water<br />
+			- 2-3 cups of sugar<br />
+			- A tall narrow glass or jar 
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Clip the wooden skewer into the clothespin so that it hangs down inside the glass and is about 1 inch (2.5 cm) from the bottom of the glass.<br /><br />
+			2. Remove the skewer and clothespin and put them aside for now. <br /><br />
+			3. Get a helpful adult!<br /><br />
+			4. Pour the water into a pan and bring it to boil.<br /><br />
+			5.   Pour about 1/4 cup of sugar into the boiling water, stirring until it dissolves. <br /><br />
+			6.  Keep adding more and more sugar, each time stirring it until it dissolves, until no more will dissolve. This will take time and patience and it will take longer for the sugar to dissolve each time.Be sure you don't give up too soon. Once no more sugar will dissolve, remove it from heat and allow it to cool for at least 20 minutes. <br /><br />
+			7. NOTE: While it is cooling, some peole like to dip half of the skewer in the sugar solution and then roll it in some sugar to help jump start the crystal growth. If you do this, be sure to let the skewer cool completely so that sugar crystals do not fall off when you place it back in the glass.<br /><br />
+			8.  Have your friendly ADULT carefully pour the sugar solution into the jar almost to the top. Then submerge the skewer back into the glass making sure that it is hanging straight down the middle without touching the sides. <br /><br />
+			9.  Allow the jar to fully cool and put it someplace where it will not be disturbed.<br /><br />
+			10.  Now just wait. The sugar crystals will grow over the next 3-7 days.<br /><br />
+			Want colored rock candy? Add food coloring to your sugar water and make sure sure that it is pretty dark in color for the best result. 
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			When you mixed the water and sugar you made a SUPER SATURATED SOLUTION. This means that the water could only hold the sugar if both were very hot. As the water cools the sugar "comes out" of the solution back into sugar crystals on your skewer. The skewer (and sometines the glass itself) act as a "seed" that the sugar crystals start to grow on. With some luck and patience you will have a tasty scientific treat! Enjoy! 
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list6" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>Blobs in a Bottle</b></h2>
+			<center><img src="images/6.gif" width="100%"></center>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- A clean 1 liter clear soda bottle <br />
+			- 3/4 cup of water <br />
+			- Vegetable Oil <br />
+			- Fizzing tablets (such as Alka Seltzer)<br />
+			- Food coloring 
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Pour the water into the bottle.<br /><br />
+			2. Use a measuring cup or funnel to slowly pour the vegetable oil into the bottle until it's almost full. You may have to wait a few minutes for the oil and water separate.<br /><br />
+			3. Add 10 drops of food coloring to the bottle (we like red, but any color will look great.) The drops will pass through the oil and then mix with the water below. <br /><br />
+			4. Break a seltzer tablet in half and drop the half tablet into the bottle. Watch it sink to the bottom and let the blobby greatness begin! <br /><br />
+			5.  To keep the effect going, just add another tablet piece. For a true lava lamp effect, shine a flashlight through the bottom of the bottle.<br /><br />
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			To begin, the oil stays above the water because the oil is lighter than the water or, more specifically, less dense than water. The oil and water do not mix because of something called "intermolecular polarity." That term is fun to bring up in dinner conversation. Molecular polarity basically means that water molecules are attracted to other water molecules. They get along fine, and can loosely bond together (drops.) This is similar to magnets that are attracted to each other. Oil molecules are attracted to other oil molecules, they get along fine as well. But the structures of the two molecules do not allow them to bond together. Of course, there’s a lot more fancy scientific language to describe density and molecular polarity, but maybe now you’ll at least look at that vinegrette salad dessing in a whole new way.<br /><br />
+			When you added the tablet piece, it sank to the bottom and started dissolving and creating a gas. As the gas bubbles rose, they took some of the colored water with them. When the blob of water reached the top, the gas escaped and down went the water. Cool, huh? By the way, you can store your "Blobs In A Bottle" with the cap on, and then anytime you want to bring it back to life, just add another tablet piece. 
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list7" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>The Incredible Hoop Glider</b></h2>
+			<center><img src="images/7.gif" width="100%"></center>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- A regular plastic drinking straw <br />
+			- 3 X 5 inch index card or stiff paper<br />
+			- Tape<br />
+			- Scissors
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Cut the index card or stiff paper into 3 separate pieces that measure 1 inch (2.5 cm) by 5 inches (13 cm.)<br /><br />
+			2. Take 2 of the pieces of paper and tape them together into a hoop as shown. Be sure to overlap the pieces about half an inch (1 cm) so that they keep a nice round shape once taped. <br /><br />
+			3. Use the last strip of paper to make a smaller hoop, overlapping the edges a bit like before.<br /><br />
+			4. Tape the paper loops to the ends of the straw as shown below. (notice that the straw is lined up on the inside of the loops)<br /><br />
+			<center><img src="images/7-1.gif" width="100%"></center><br />
+			5. That's it! Now hold the straw in the middle with the hoops on top and throw it in the air similar to how you might throw a dart angled slightly up. With some practice you can get it to go farther than many paper airplanes.
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			Can we really call that a plane? It may look weird, but you will discover it flies surprisingly well. The two sizes of hoops help to keep the straw balanced as it flies. The big hoop creates "drag" (or air resistance) which helps keep the straw level while the smaller hoop in at the front keeps your super hooper from turning off course. Some have asked why the plane does not turn over since the hoops are heavier than the straw. Since objects of different weight generally fall at the same speed, the hoop will keep its "upright" position. 
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list8" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>Make a Levitating Orb</b></h2>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- 1 inch (2.5 cm) wide PVC Pipe about 24 inches (60cm) long. You can also use a regular balloon if you do not have PVC pipe. <br />
+			- Mylar tinsel for Christmas trees. There are many types of tinsel - you should look for the thinnest and narrowest possible. The tinsel used in the video is about 1 millimeter wide. If it is much wider than that, the orb may be too heavy to levitate. <br />
+			- A head of clean, dry hair <br />
+			- Scissors
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<center><img src="images/8.gif" width="100%"></center>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Arrange 6 strands of mylar together and tie them together in a knot at one end.<br /><br />
+			2. Tie them together again about 6 inches (15cm) from the first knot.<br /><br />
+			3. Cut the loose mylar strands off just past each knot.<br /><br />
+			4. Charge the PVC pipe by rubbing it back and forth through your hair for 10 seconds.<br /><br />
+			5. Hold the mylar orb (by the knot) above the charged pipe and let it drop and touch the pipe. <br /><br />
+			6. It should repel away and start floating. If the tinsel keeps sticking to the pipe, the tinsel is probably not thin enough and you will need to try another kind of tinsel or order some from us. (You will usually have to "recharge" the pipe before each levitation.)
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			It is all about static charges. Similar static charges repel away from each other. When you rub the pipe in your hair you give the pipe a negative static charge. The orb is attracted to the pipe at first because the orb has a positive charge. As soon as the orb touches the pipe, it picks up a negative charge. Since the pipe is negative and the tinsel orb is now negative, they repel away from each other and the orb levitates! The orb will also take on more of a "ball" appearance when charged since all the tinsel strands are repelling away from each other. Did you notice the orb is attracted to other objects around you - including you? That is because most objects (including you) have a positive charge. 
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list9" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>Roll a Can with Static Electricity</b></h2>
+			<center><img src="images/9.gif" width="100%"></center>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- An empty soda can<br />
+			- blown-up balloon<br />
+			- A head of hair
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Place the can on its side on a flat smooth surface like a table or a smooth floor. <br /><br />
+			2. Rub the blown up balloon back and forth through your hair really fast.<br /><br />
+			3. Now the fun part - Hold the balloon close to the can without actually touching the can. The can will start to roll towards the balloon without you even touching it!<br /><br />
+			Try This Too: While you've got the balloon out, tear up part of a tissue into tiny pieces about 1/4 inch (.5 cm) big. Rub the balloon in your hair again and bring it close to the tissue pieces. They will be attracted to the balloon and then jump away.
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			This works a lot like our bending water experiment. When you rub the balloon through your hair, invisible electrons (with a negative charge) build up on the surface of the balloon. This is called static electricity, which means "non-moving electricity" The electrons have the power to pull very light objects (with a positive charge) toward them - like the soda can. 
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list10" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>Clean Pennies with Vinegar</b></h2>
+			<center><img src="images/10.gif" width="100%"></center>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- A few old (not shiny) pennies<br />
+			- 1/4 cup white vinegar<br />
+			- 1 teaspoon salt<br />
+			- Non-metal bowl <br />
+			- Paper towels
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Pour the vinegar into the bowl and add the salt - stir it up. <br /><br />
+			2. Put about 5 pennies into the bowl and count to 10 slowly. <br /><br />
+			3. Take out the pennies and rinse them out in some water. Admire their shininess!<br /><br />
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			There is some pretty fancy chemistry going on in that little bowl of yours. It turns out that vinegar is an acid, and the acid in the vinegar reacts with the salt to remove what chemists call copper oxide which was making your pennies dull. You're not done yet, though, lets try another experiment:<br /><br />
+			Add more pennies to the bowl for 10 seconds, but this time , don't rinse them off. Place them on a paper towel to dry off. In time the pennies will turn greenish-blue as a chemical called malachite forms on your pennies. But wait, you're still not done yet.<br /><br />
+			Place one or two nuts and bolts in the vinegar and watch - they may become COPPER in color! The vinegar removed some of the copper from the pennies, if there is enough copper in the vinegar, the copper will become attracted by to the metal in the nuts and bolts and they will take on a new copper color - cool. 
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list11" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>Make a Plastic Milk</b></h2>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- One cup of milk<br />
+			- 4 teaspoons of white vinegar<br />
+			- A bowl<br />
+			- A strainer<br />
+			- Adult help
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Ask your friendly adult to heat up the milk until it is hot, but not boiling<br /><br />
+			2. Now ask the adult to carefully pour the milk into the bowl<br /><br />
+			3. Add the vinegar to the milk and stir it up with a spoon for about a minute<br /><br />
+			4. Now the fun part, pour the milk through the strainer into the sink - careful it may be hot!<br /><br />
+			5. Left behind in the strainer is a mass of lumpy blobs.<br /><br />
+			6. When it is cool enough, you can rinse the blobs off in water while you press them together .<br /><br />
+			7. Now just mold it into a shape and it will harden in a few days. - Cool!
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			Plastic? In milk? Well, sort of. You made a substance called CASEIN. It's from the latin word meaning "cheese." CasEin occurs when the protien in the milk meets the acid in the vinegar. The casein in milk does not mix with the acid and so it forms blobs. True plastics, called poymers, are a little different. If you want to make a true plastic and learn more about polymers, try the Homemade Slime experiment. Have fun!
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list12" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>Make a Balloon Rocket</b></h2>
+			<center><img src="images/12.gif" width="100%"></center>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- 1 balloon (round ones will work, but the longer "airship" balloons work best)<br />
+			- 1 long piece of kite string (about 10-15 feet long)<br />
+			- 1 plastic straw<br />
+			- tape
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Tie one end of the string to a chair, door knob, or other support.<br /><br />
+			2. Put the other end of the string through the straw.<br /><br />
+			3. Pull the string tight and tie it to another support in the room.<br /><br />
+			4. Blow up the balloon (but don't tie it.) Pinch the end of the balloon and tape the balloon to the straw as shown above. You're ready for launch.<br /><br />
+			5. Let go and watch the rocket fly!
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			So how does it work? It's all about the air...and thrust. As the air rushes out of the balloon, it creates a forward motion called THRUST. Thrust is a pushing force created by energy. In the balloon experiment, our thrust comes from the energy of the balloon forcing the air out. Different sizes and shapes of balloon will create more or less thrust. In a real rocket, thrust is created by the force of burning rocket fuel as it blasts from the rockets engine - as the engines blast down, the rocket goes up!
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list13" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>Try some Lava in a Cup</b></h2>
+			<center><img src="images/13.gif" width="100%"></center>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- A clear drinking glass<br />
+			- 1/4 cup vegetable oil<br />
+			- 1 teaspoon salt<br />
+			- Water<br />
+			- Food coloring (optional) 
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Fill the glass about 3/4 full of water .<br /><br />
+			2. Add about 5 drops of food coloring - I like red for the lava look.<br /><br />
+			3. Slowly pour the vegetable oil into the glass. See how the oil floats on top - cool huh? It gets better.<br /><br />
+			4. Now the fun part: Sprinkle the salt on top of the oil.<br /><br />
+			5. Watch blobs of lava move up and down in your glass!<br /><br />
+			6. If you liked that, add another teaspoon of salt to keep the effect going.
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			So what's going on? Of course, it's not real lava but it does look a bit like a lava lamp your parents may have had. First of all, the oil floats on top of the water because it is lighter than the water. Since the salt is heavier than oil, it sinks down into the water and takes some oil with it, but then the salt dissolves and back up goes the oil! Pretty cool huh?
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list14" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>Make an Electromagnet</b></h2>
+			<center><img src="images/14a.jpg" width="100%"></center>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- A large iron nail (about 3 inches)<br />
+			- About 3 feet of THIN COATED copper wire<br />
+			- A fresh D size battery<br />
+			- Some paper clips or other small magnetic objects
+			</p>
+			<center><img src="images/14b.gif" width="100%"></center>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Leave about 8 inches of wire loose at one end and wrap most of the rest of the wire around the nail. Try not to overlap the wires.<br /><br />
+			2. Cut the wire (if needed) so that there is about another 8 inches loose at the other end too.<br /><br />
+			3. Now remove about an inch of the plastic coating from both ends of the wire and attach the one wire to one end of a battery and the other wire to the other end of the battery. See picture below. (It is best to tape the wires to the battery - be careful though, the wire could get very hot!)<br /><br />
+			4. Now you have an ELECTROMAGNET! Put the point of the nail near a few paper clips and it should pick them up!<br /><br />
+			<b>NOTE:</b> Making an electromagnet uses up the battery somewhat quickly which is why the battery may get warm, so disconnect the wires when you are done exploring.
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			Most magnets, like the ones on many refrigerators, cannot be turned off, they are called permanent magnets. Magnets like the one you made that can be turned on and off, are called ELECTROMAGNETS. They run on electricity and are only magnetic when the electricity is flowing. The electricity flowing through the wire arranges the molecules in the nail so that they are attracted to certain metals. NEVER get the wires of the electromagnet near at household outlet! Be safe - have fun!
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list15" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>Blow up a Balloon with Yeast</b></h2>
+			<center><img src="images/15.gif" width="100%"></center>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- A packet of yeast (available in the grocery store)<br />
+			- A small, clean, clear, plastic soda bottle (16 oz. or smaller)<br />
+			- 1 teaspoon of sugar<br />
+			- Some warm water<br />
+			- A small balloon
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Fill the bottle up with about one inch of warm water.<br /><br />
+			<i>( When yeast is cold or dry the micro organisms are resting.)</i><br /><br />
+			2. Add all of the yeast packet and gently swirl the bottle a few seconds.<br /><br />
+			<i>(As the yeast dissolves, it becomes active - it comes to life! Don't bother looking for movement, yeast is a microscopic fungus organism.)</i><br /><br />
+			3. Add the sugar and swirl it around some more.<br /><br />
+			<i>Like people, yeast needs energy (food) to be active, so we will give it sugar. Now the yeast is "eating!"</i><br /><br />
+			4. Blow up the balloon a few times to stretch it out then place the neck of the balloon over the neck of the bottle.<br /><br />
+			5. Let the bottle sit in a warm place for about 20 minutes <br /><br />
+			<i>If all goes well the balloon will begin to inflate!</i>
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			As the yeast eats the sugar, it releases a gas called carbon dioxide. The gas fills the bottle and then fills the balloon as more gas is created. We all know that there are "holes" in bread, but how are they made? The answer sounds a little like the plot of a horror movie. Most breads are made using YEAST. Believe it or not, yeast is actually living microorganisms! When bread is made, the yeast becomes spread out in flour. Each bit of yeast makes tiny gas bubbles and that puts millions of bubbles (holes) in our bread before it gets baked. Naturalist's note - The yeast used in this experiment are the related species and strains of Saccharomyces cervisiae. (I'm sure you were wondering about that.) Anyway, when the bread gets baked in the oven, the yeast dies and leaves all those bubbles (holes) in the bread. Yum.
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+
+<div data-role="page" id="list16" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>Make a Paper clip Float</b></h2>
+			<center><img src="images/16.jpg" width="100%"></center>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- clean dry paper clips<br />
+			- tissue paper<br />
+			- a bowl of water<br />
+			- pencil with eraser
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Fill the bowl with water<br /><br />
+			2. Try to make the paper clip float...not much luck, huh?<br /><br />
+			3. Tear a piece of tissue paper about half the size of a dollar bill<br /><br />
+			4. GENTLY drop the tissue flat onto the surface of the water<br /><br />
+			5. GENTLY place a dry paper clip flat onto the tissue (try not to touch the water or the tissue)<br /><br />
+			6. Use the eraser end of the pencil to carefully poke the tissue (not the paper clip) until the tissue sinks. With some luck, the tissue will sink and leave the paper clip floating!
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			How is this possible? With a little thing we scientists call SURFACE TENSION. Basically it means that there is a sort of skin on the surface of water where the water molecules hold on tight together. If the conditions are right, they can hold tight enough to support your paper clip. The paperclip is not truly floating, it is being held up by the surface tension. Many insects, such as water striders, use this "skin" to walk across the surface of a stream.
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list17" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>Color Symphony</b></h2>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- A flat tray (like a cookie baking tray)<br />
+			- Food coloring (at least 3 different colors)<br />
+			- Whole milk - low fat milk will not work for this experiment<br />
+			- Liquid soap used for washing dishes
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Carefully pour the milk into the tray so that it just covers the bottom<br /><br />
+			2. Add about 6-8 drops of different colored food coloring onto the milk in different spots<br /><br />
+			3. Add about 5 drops of the liquid soap onto the drops of food coloring and watch the show!<br /><br />
+			4. To clean up, simply pour the colored milk down the drain. (don't drink it!)
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			So you know where the color comes from, but why milk and liquid soap? The main job of dish soap it to go after fat and break it down. Usually the fat is on dishes from the food we eat, but fat is also in whole milk. When you drop the liquid soap onto the tray, it tried to break down the fat in the milk. While it was doing that, it caused the colors to scatter and mix creating a very colorful display. Have fun! 
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list18" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>Bend Water with Static Electricity</b></h2>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- A dry plastic comb<br />
+			- An indoor faucet<br />
+			- A head full of clean dry hair.
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Turn on the faucet and slowly turn down the water until you have a VERY thin stream of water flowing.<br /><br />
+			2. Take the plastic comb and brush it through your hair ten times.<br /><br />
+			3. Now slowly bring the comb close the the flowing water, (without actually touching the water) If all goes well, the stream of water should bend towards the comb! Magic you ask? Not really.
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			When you brushed that comb through your hair, tiny parts of the atoms in your hair, called ELECTRONS, collected on the comb. These electrons have a NEGATIVE charge. Remember that, its important. Now that the comb has a negative charge, it is attracted to things that have a POSITIVE charge. It is similar to the way some magnets are attracted to certain metals.<br /><br />
+			When you bring the negatively charged comb near the faucet it is attracted to the POSITIVE force of the water. The attraction is strong enough to actually pull the water towards the comb as it is flowing! If you want to try another experiment with your comb, tear up pieces of tissue until they are as a small as you can get them...I mean really small! Then charge your comb again by brushing it through your hair, and bring it close to the tiny pieces of tissue. If the pieces are small enough they will jump off the table to the comb the same way that the water was pulled to the comb.It is all thanks to the wonders of static electricity.
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list19" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>Make your own Volcano</b></h2>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- A volcano - Talk to an art teacher about making a volcano out of paper mache or plaster. You can also use clay or if you're in a hurry to make your volcano, use a mound of dirt outside.
+			- A container that 35mm film comes in or similar size container.
+			- Red and yellow food coloring (optional)
+			- Vinegar
+			- Liquid dish washing soap
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Go outside or prepare for some clean-up inside<br /><br />
+			2. Put the container into the volcano at the top<br /><br />
+			3. Add two spoonfuls of baking soda<br /><br />
+			4. Add about a spoonful of dish soap<br /><br />
+			5. Add about 5 drops each of the red and yellow food coloring<br /><br />
+			<i>Now for the eruption!:</i><br />
+			6. Add about an ounce of the vinegar into the container and watch what your volcano come alive.
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			A VOLCANO is produced over thousands of years as heat a pressure build up. That aspect of a volcano is very difficult to recreate in a home experiment. However this volcano will give you an idea of what it might look like when a volcano erupts flowing lava. This is a classic experiment in which a CHEMICAL reaction can create the appearance of a PHYSICAL volcano eruption. You should look at pictures of volcanoes to be familiar with the different types. (A SHIELD volcano, for example is the most common kind of volcano, and yet few people know about them) The reaction will bubble up and flow down the side like a real volcano (only much faster!) Look for videos of volcanoes erupting and be sure that you understand how heat and pressure work to really make volcanoes erupt.
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<div data-role="page" id="list20" data-theme="a" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<div data-role="content" data-theme="f" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+			<h2 align="center" style="font-family: 'Century Gothic'; color:#dc0d0d;"><b>The Exploding Lunch Bag</b></h2>
+			<h3 style="font-family: 'Century Gothic'">You will need:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			- One small (sandwich size) zip-lock bag - freezer bags work best.<br />
+			- Baking soda<br />
+			- Warm water<br />
+			- Vinegar<br />
+			- Measuring cup<br />
+			- A tissue
+			</p>
+			<h3 style="font-family: 'Century Gothic'">What to do:</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			1. Go outside - or at least do this in the kitchen sink.<br /><br />
+			2. Put 1/4 cup of pretty warm water into the bag. <br /><br />
+			3. Add 1/2 cup of vinegar to the water in the bag.<br /><br />
+			4. Put 3 teaspoons of baking soda into the middle of the tissue<br /><br />
+			5. Wrap the the baking soda up in the tissue by folding the tissue around it.<br /><br />
+			6. You will have to work fast now - partially zip the bag closed but leave enough space to add the baking soda packet. Put the tissue with the baking soda into the bag and quickly zip the bag completely closed. <br /><br />
+			7. Put the bag in the sink or down on the ground (outside) and step back. The bag will start to expand, and expand, and if all goes well...POP!
+			</p>
+			<h3 style="font-family: 'Century Gothic'">How Does it Work?</h3>
+			<p align="justify" style="font-family: 'Century Gothic'" >
+			Cool huh? Nothing like a little chemistry to to add fun to a boring afternoon. What happens inside the bag is actually pretty interesting - the baking soda and the vinegar eventually mix (the tissue buys you some time to zip the bag shut) When they do mix, you create an ACID-BASE reaction and the two chemicals work together to create a gas, (carbon dioxide - the stuff we breathe out) well it turns out gasses need a lot of room and the carbon dioxide starts to fill the bag, and keeps filling the bag until the bag can no longer hold it any more and, POP! Be sure to clean up well and recycle those plastic bags...have fun!
+			</p>
+	</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Home</a></li>
+		<li><a href="#menu" data-icon="back" data-transition="pop">Back</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+
+<!-- GAME -->
+<div data-role="page" id="game" data-theme="f" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+	<div data-role="content">
+	<a href="#questionScience" id="btnPlay" data-role="button" data-transition="pop" data-icon="carat-r" data-iconpos="right">Start Game</a>
+	</div>
+	
+	
+	<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-role="button" data-transition="pop" data-icon="back" data-iconpos="top">Back To Main Menu</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<!-- PLAYGAME -->
+<div data-role="page" id="questionScience" data-theme="d" data-position="fixed" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+	<div data-role="content" data-theme="a" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+		<div id="relative" style="color:#000066; font-family: 'Century Gothic';">
+		<center>
+		<h3 id="timer">TIME</h3>
+		<h3 id="showTimer" style="font-family: 'Century Gothic';"></h3>
+		<h3 id="score">SCORE</h3>
+		<h3 id="asd" style="margin-left: auto; margin-top: auto; font-family: 'Century Gothic';"></h3>
+		
+		<span id="count"></span>
+		
+		<h3 id="prog2"></h3>
+		<h3 id="questions"></h3>
+	</center>
+
+<a data-role="button" id="check1" class="q1" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c1"></span></a>
+<a data-role="button" id="check2" class="q1" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c2"></span></a>
+<a data-role="button" id="check3" class="q1" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c3"></span></a>
+<a data-role="button" id="check4" class="q2" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c4"></span></a>
+<a data-role="button" id="check5" class="q2" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c5"></span></a>
+<a data-role="button" id="check6" class="q2" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c6"></span></a>
+<a data-role="button" id="check7" class="q3" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c7"></span></a>
+<a data-role="button" id="check8" class="q3" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c8"></span></a>
+<a data-role="button" id="check9" class="q3" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c9"></span></a>
+<a data-role="button" id="check10" class="q4" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c10"></span></a>
+<a data-role="button" id="check11" class="q4" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c11"></span></a>
+<a data-role="button" id="check12" class="q4" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c12"></span></a>
+<a data-role="button" id="check13" class="q5" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c13"></span></a>
+<a data-role="button" id="check14" class="q5" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c14"></span></a>
+<a data-role="button" id="check15" class="q5" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c15"></span></a>
+<a data-role="button" id="check16" class="q6" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c16"></span></a>
+<a data-role="button" id="check17" class="q6" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c17"></span></a>
+<a data-role="button" id="check18" class="q6" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c18"></span></a>
+<a data-role="button" id="check19" class="q7" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c19"></span></a>
+<a data-role="button" id="check20" class="q7" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c20"></span></a>
+<a data-role="button" id="check21" class="q7" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c21"></span></a>
+<a data-role="button" id="check22" class="q8" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c22"></span></a>
+<a data-role="button" id="check23" class="q8" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c23"></span></a>
+<a data-role="button" id="check24" class="q8" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c24"></span></a>
+<a data-role="button" id="check25" class="q9" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c25"></span></a>
+<a data-role="button" id="check26" class="q9" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c26"></span></a>
+<a data-role="button" id="check27" class="q9" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c27"></span></a>
+<a data-role="button" id="check28" class="q10" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c28"></span></a>
+<a data-role="button" id="check29" class="q10" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c29"></span></a>
+<a data-role="button" id="check30" class="q10" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c30"></span></a>
+<a data-role="button" id="check31" class="q11" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c31"></span></a>
+<a data-role="button" id="check32" class="q11" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c32"></span></a>
+<a data-role="button" id="check33" class="q11" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c33"></span></a>
+<a data-role="button" id="check34" class="q12" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c34"></span></a>
+<a data-role="button" id="check35" class="q12" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c35"></span></a>
+<a data-role="button" id="check36" class="q13" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c36"></span></a>
+<a data-role="button" id="check37" class="q13" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c37"></span></a>
+<a data-role="button" id="check38" class="q13" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c38"></span></a>
+<a data-role="button" id="check39" class="q14" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c39"></span></a>
+<a data-role="button" id="check40" class="q14" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c40"></span></a>
+<a data-role="button" id="check41" class="q14" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c41"></span></a>
+<a data-role="button" id="check42" class="q15" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c42"></span></a>
+<a data-role="button" id="check43" class="q15" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c43"></span></a>
+<a data-role="button" id="check44" class="q15" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c44"></span></a>
+<a data-role="button" id="check45" class="q16" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c45"></span></a>
+<a data-role="button" id="check46" class="q16" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c46"></span></a>
+<a data-role="button" id="check47" class="q16" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c47"></span></a>
+<a data-role="button" id="check48" class="q17" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c48"></span></a>
+<a data-role="button" id="check49" class="q17" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c49"></span></a>
+<a data-role="button" id="check50" class="q17" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c50"></span></a>
+<a data-role="button" id="check51" class="q18" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c51"></span></a>
+<a data-role="button" id="check52" class="q18" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c52"></span></a>
+<a data-role="button" id="check53" class="q18" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c53"></span></a>
+<a data-role="button" id="check54" class="q19" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c54"></span></a>
+<a data-role="button" id="check55" class="q19" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c55"></span></a>
+<a data-role="button" id="check56" class="q19" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c56"></span></a>
+<a data-role="button" id="check57" class="q20" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c57"></span></a>
+<a data-role="button" id="check58" class="q20" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c58"></span></a>
+<a data-role="button" id="check59" class="q20" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c59"></span></a>
+<a data-role="button" id="check60" class="q21" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c60"></span></a>
+<a data-role="button" id="check61" class="q21" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c61"></span></a>
+<a data-role="button" id="check62" class="q21" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c62"></span></a>
+<a data-role="button" id="check63" class="q22" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c63"></span></a>
+<a data-role="button" id="check64" class="q22" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c64"></span></a>
+<a data-role="button" id="check65" class="q22" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c65"></span></a>
+<a data-role="button" id="check66" class="q23" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c66"></span></a>
+<a data-role="button" id="check67" class="q23" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c67"></span></a>
+<a data-role="button" id="check68" class="q23" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c68"></span></a>
+<a data-role="button" id="check69" class="q24" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c69"></span></a>
+<a data-role="button" id="check70" class="q24" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c70"></span></a>
+<a data-role="button" id="check71" class="q24" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c71"></span></a>
+<a data-role="button" id="check72" class="q25" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c72"></span></a>
+<a data-role="button" id="check73" class="q25" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c73"></span></a>
+<a data-role="button" id="check74" class="q25" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c74"></span></a>
+<a data-role="button" id="check75" class="q26" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c75"></span></a>
+<a data-role="button" id="check76" class="q26" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c76"></span></a>
+<a data-role="button" id="check77" class="q26" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c77"></span></a>
+<a data-role="button" id="check78" class="q27" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c78"></span></a>
+<a data-role="button" id="check79" class="q27" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c79"></span></a>
+<a data-role="button" id="check80" class="q27" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c80"></span></a>
+<a data-role="button" id="check81" class="q28" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c81"></span></a>
+<a data-role="button" id="check82" class="q28" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c82"></span></a>
+<a data-role="button" id="check83" class="q28" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c83"></span></a>
+<a data-role="button" id="check84" class="q29" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c84"></span></a>
+<a data-role="button" id="check85" class="q29" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c85"></span></a>
+<a data-role="button" id="check86" class="q29" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c86"></span></a>
+<a data-role="button" id="check87" class="q30" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c87"></span></a>
+<a data-role="button" id="check88" class="q30" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c88"></span></a>
+<a data-role="button" id="check89" class="q30" style="display:none; font-family: 'Maiandra GD'; background-color:#329aeb;"><span id="c89"></span></a>
+
+<button id="splice" style="display:none;" onClick="splice()">next</button>
+</div>
+</div>
+<div data-role="footer" data-position="fixed" data-theme="f">
+	<div data-role="navbar">
+		<ul>
+		<li><a href="#index" data-icon="home" data-transition="pop">Quit Game</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+
+<!-- save online dialog end game-->
+<div data-role="page" data-theme="a" data-position="fixed" id="saveDialog" style="background-image:url('images/bg.png'); background-size:cover; background-repeat:no-repeat;">
+	<img id="result"/>
+		<div data-role="content">
+		<div id="relative2" style="color:#000066;">
+		<center><h1 id="tryAgain" style="font-family: 'Century Gothic'"></h1></center>
+		<form id="savedata" action="javascript:saveOnline();">
+		<center>
+		<h1 style="font-size:20px; font-family: 'Century Gothic';">Your Last Score : </h1><input type="text" id="lastscore" disabled style="font-size:20px; text"/>
+		<h1 style="font-size:20px; font-family: 'Century Gothic';">Your New Score : </h1><input type="text" id="score" name="score" style="display:none;"/>
+		<h1 id="score2" style="font-size:20px;"></h1>
+		<input type="text" id="username" name="username" style="display:none;">
+		</center>
+		</form>
+		<div data-role="footer" data-position="fixed" data-theme="f" data-position="relative">
+		<div data-role="navbar">
+		<ul>
+		<li><a href="#game" data-role="button" data-transition="pop" data-icon="back" data-iconpos="top" data-position="relative">Play Again</a></li>
+		</ul>
+	</div>
+	</div>
+		</div>
+		</div>
+</div>
+
+<script>
+	$("#playAgain").click(function(){
+		location.href="#home";
+		location.reload();
+		var score=window.localStorage.getItem("score");
+		var changeScore=window.localStorage.setItem("lastscore",score);
+	});
+		$("#saveScore").click(function(){
+		location.href="#home";
+		var score=window.localStorage.getItem("score");
+		window.localStorage.setItem("lastscore",score);
+	});
+
+//save online
+function saveOnline(){
+
+var form = $("#savedata");
+         				$.getJSON("phpfiles/savescore.php?callback=?", form.serialize(),function(data)
+         				{
+						alert("Success! Your score is saved.")
+						location.href="home.html";
+						var score=window.localStorage.getItem("score");
+						window.localStorage.setItem("lastscore",score);
+         				}).fail(function(data){
+         				alert("Failed to Save");
+         				});
+}
+
+	// leaderboard get onLine
+	function loadAjax(){
+
+		var xmlhttp;
+		if(window.XMLHttpRequest){
+			xmlhttp = new XMLHttpRequest();
+		}else{
+			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange=function(){
+			if(xmlhttp.readyState==4 && xmlhttp.status==200){
+				document.getElementById("inserthere").innerHTML=xmlhttp.responseText;
+		}}
+	xmlhttp.open("GET","phpfiles/leaderboard.php", true);
+		xmlhttp.send();
+	}
+	
+$("#menu").click(function(){
+$("#logout").slideToggle(100).click(function(){
+localStorage.removeItem("datauser");
+location.href="index.html";
+});
+});
+
+$("#back").click(function(){
+location.href="#home";
+});
+
+$("#quit").click(function(){
+location.href="home.html";
+});
+
+$("#btnPlay").click(function(){
+splice();
+});
+
+//questions
+var qqq = ["q1", "q2","q3","q4","q5","q6","q7","q8","q9","q10","q11","q12","q13","q14","q15","q16","q17","q18","q19","q20","q21","q22","q23","q24","q25","q26","q27","q28","q29","q30"];
+var score=0;
+function splice(){
+document.getElementById("asd").innerHTML=score;
+var rand=Math.floor((Math.random() * 4));
+setTimeout(function(){
+var a=qqq.splice((Math.random() * qqq.length),1);
+if(a=="q1"){
+$(".q1").show();
+document.getElementById("questions").innerHTML="What is the biggest planet in our solar system?";
+$("#c1").text("Jupiter");
+$("#c2").text("Saturn");
+$("#c3").text("Neptune");
+$("#check1").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q1").hide();
+});
+$("#check2").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q1").hide();
+});
+$("#check3").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q1").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q2"){
+$(".q2").show();
+document.getElementById("questions").innerHTML="What is the chemical symbol for the element oxygen?";
+$("#c4").text("X");
+$("#c5").text("Ox");
+$("#c6").text("O");
+$("#check4").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q2").hide();
+});
+$("#check5").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q2").hide();
+});
+$("#check6").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q2").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q3"){
+$(".q3").show();
+document.getElementById("questions").innerHTML="Another name for a tidal wave is a?";
+$("#c7").text("Super wave");
+$("#c8").text("Tsunami");
+$("#c9").text("Tornado");
+$("#check8").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q3").hide();
+});
+$("#check7").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q3").hide();
+});
+$("#check9").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q3").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q4"){
+$(".q4").show();
+document.getElementById("questions").innerHTML="What is the 7th element on the periodic table of elements?";
+$("#c10").text("Oxygen");
+$("#c11").text("Hydorgen");
+$("#c12").text("Nitrogen");
+$("#check10").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q4").hide();
+});
+$("#check11").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q4").hide();
+});
+$("#check12").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q4").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q5"){
+$(".q5").show();
+document.getElementById("questions").innerHTML="The highest mountain on earth is?";
+$("#c13").text("Mount Everest");
+$("#c14").text("Mount Samat");
+$("#c15").text("Mount K2");
+$("#check13").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q5").hide();
+});
+$("#check14").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q5").hide();
+});
+$("#check15").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q5").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q6"){
+$(".q6").show();
+document.getElementById("questions").innerHTML="What is the name of the closest star to the earth?";
+$("#c16").text("Proxima Centauri");
+$("#c17").text("Sun");
+$("#c18").text("Rigil Kentaurus");
+$("#check16").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q6").hide();
+});
+$("#check18").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q6").hide();
+});
+$("#check17").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q6").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);}
+
+else if(a=="q7"){
+$(".q7").show();
+document.getElementById("questions").innerHTML="What is the name of the element with the chemical symbol ‘He’";
+$("#c19").text("Hydrogen");
+$("#c20").text("Mercury");
+$("#c21").text("Helium");
+$("#check21").click(function(){
+score=score+1;
+clearInterval(time);
+splice();
+$(".q7").hide();
+});
+$("#check19").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q7").hide();
+});
+$("#check20").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q7").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q8"){
+$(".q8").show();
+document.getElementById("questions").innerHTML="Pure water has a pH level of a around?";
+$("#c22").text("Seven (7)");
+$("#c23").text("Eight (8)");
+$("#c24").text("Eight (6)");
+$("#check23").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q8").hide();
+});
+$("#check24").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q8").hide();
+});
+$("#check22").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q8").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q9"){
+$(".q9").show();
+document.getElementById("questions").innerHTML="The molten rock that comes from a volcano after it has erupted is known as what?";
+$("#c25").text("Igneous");
+$("#c26").text("Lava");
+$("#c27").text("Magma");
+$("#check25").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q9").hide();
+});
+$("#check27").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q9").hide();
+});
+$("#check26").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q9").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q10"){
+$(".q10").show();
+document.getElementById("questions").innerHTML="What is the name of the part of the human skeleton which protects our brain?";
+$("#c28").text("Mandible");
+$("#c29").text("Skull");
+$("#c30").text("Maxilla");
+$("#check29").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q10").hide();
+});
+$("#check28").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q10").hide();
+});
+$("#check30").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q10").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q11"){
+$(".q11").show();
+document.getElementById("questions").innerHTML="How many bones do sharks have in their bodies?";
+$("#c31").text("0");
+$("#c32").text("100");
+$("#c33").text("1000");
+$("#check31").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q11").hide();
+});
+$("#check32").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q11").hide();
+});
+$("#check33").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q11").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q12"){
+$(".q12").show();
+document.getElementById("questions").innerHTML="Is the compound ‘HCl’ an acid or base?";
+$("#c34").text("Acid");
+$("#c35").text("Base");
+$("#check34").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q12").hide();
+});
+$("#check35").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q12").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q13"){
+$(".q13").show();
+document.getElementById("questions").innerHTML="What famous scientist was awarded the 1921 Nobel Prize in Physics for his work on theoretical physics?";
+$("#c36").text("Albert Einstein");
+$("#c37").text("Isaac Newton");
+$("#c38").text("Charles Darwin");
+$("#check36").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q13").hide();
+});
+$("#check37").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q13").hide();
+});
+$("#check38").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q13").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q14"){
+$(".q14").show();
+document.getElementById("questions").innerHTML="The scientific study of plant life is known as what?";
+$("#c39").text("Chemistry");
+$("#c40").text("Botany");
+$("#c41").text("Biology");
+$("#check40").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q14").hide();
+});
+$("#check39").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q14").hide();
+});
+$("#check41").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q14").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q15"){
+$(".q15").show();
+document.getElementById("questions").innerHTML="The process of plants using energy from sunlight to turn carbon dioxide into food is known as what?";
+$("#c42").text("Photosynthesis");
+$("#c43").text("Light Sensor");
+$("#c44").text("Nature");
+$("#check42").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q15").hide();
+});
+$("#check43").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q15").hide();
+});
+$("#check44").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q15").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q16"){
+$(".q16").show();
+document.getElementById("questions").innerHTML="The Japanese word “sakura” means the blossoming of what kind of tree?";
+$("#c45").text("Apple tree");
+$("#c46").text("Red tree");
+$("#c47").text("Cherry tree");
+$("#check45").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q16").hide();
+});
+$("#check46").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q16").hide();
+});
+$("#check47").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q16").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q17"){
+$(".q17").show();
+document.getElementById("questions").innerHTML="Now that Pluto is no longer included, how many planets are there in the Solar System?";
+$("#c48").text("Nine (9)");
+$("#c49").text("Seven (7)");
+$("#c50").text("Eight (8)");
+$("#check48").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q17").hide();
+});
+$("#check49").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q17").hide();
+});
+$("#check50").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q17").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q18"){
+$(".q18").show();
+document.getElementById("questions").innerHTML="What is the smallest planet in the Solar System?";
+$("#c51").text("Neptune");
+$("#c52").text("Mercury");
+$("#c53").text("Venus");
+$("#check51").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q18").hide();
+});
+$("#check53").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q18").hide();
+});
+$("#check52").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q18").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q19"){
+$(".q19").show();
+document.getElementById("questions").innerHTML="What is the largest planet in the Solar System?";
+$("#c54").text("Jupiter");
+$("#c55").text("Saturn");
+$("#c56").text("Earth");
+$("#check55").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q19").hide();
+});
+$("#check56").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q19").hide();
+});
+$("#check54").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q19").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q20"){
+$(".q20").show();
+document.getElementById("questions").innerHTML="What is the hottest planet in the Solar System?";
+$("#c57").text("Mercury");
+$("#c58").text("Venus");
+$("#c59").text("Earth");
+$("#check57").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q20").hide();
+});
+$("#check59").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q20").hide();
+});
+$("#check58").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q20").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q21"){
+$(".q21").show();
+document.getElementById("questions").innerHTML="The sixth planet from the Sun features an extensive ring system, what is the name of this planet?";
+$("#c60").text("Saturn");
+$("#c61").text("Jupiter");
+$("#c62").text("Uranus");
+$("#check60").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q21").hide();
+});
+$("#check61").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q21").hide();
+});
+$("#check62").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q21").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q22"){
+$(".q22").show();
+document.getElementById("questions").innerHTML="The chemical element uranium was named after what planet?";
+$("#c63").text("Neptune");
+$("#c64").text("Saturn");
+$("#c65").text("Uranus");
+$("#check65").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q22").hide();
+});
+$("#check63").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q22").hide();
+});
+$("#check64").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q22").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q23"){
+$(".q23").show();
+document.getElementById("questions").innerHTML="What planet in the solar system is farthest from the Sun?";
+$("#c66").text("Mercury");
+$("#c67").text("Neptune");
+$("#c68").text("Uranus");
+$("#check67").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q23").hide();
+});
+$("#check66").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q23").hide();
+});
+$("#check68").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q23").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q24"){
+$(".q24").show();
+document.getElementById("questions").innerHTML="What is the second smallest planet in the solar system?";
+$("#c69").text("Mars");
+$("#c70").text("Earth");
+$("#c71").text("Venus");
+$("#check69").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q24").hide();
+});
+$("#check70").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q24").hide();
+});
+$("#check71").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q24").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q25"){
+$(".q25").show();
+document.getElementById("questions").innerHTML="What planet is closest in size to Earth?";
+$("#c72").text("Uranus");
+$("#c73").text("Venus");
+$("#c74").text("Mars");
+$("#check74").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q25").hide();
+});
+$("#check72").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q25").hide();
+});
+$("#check73").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q25").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q26"){
+$(".q26").show();
+document.getElementById("questions").innerHTML="The moon Titan orbits what planet?";
+$("#c75").text("Venus");
+$("#c76").text("Saturn");
+$("#c77").text("Jupiter");
+$("#check76").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q26").hide();
+});
+$("#check75").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q26").hide();
+});
+$("#check77").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q26").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q27"){
+$(".q27").show();
+document.getElementById("questions").innerHTML="What planet is nicknamed the ‘Red Planet’?";
+$("#c78").text("Mercury");
+$("#c79").text("Mars");
+$("#c80").text("Uranus");
+$("#check79").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q27").hide();
+});
+$("#check78").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q27").hide();
+});
+$("#check80").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q27").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q28"){
+$(".q28").show();
+document.getElementById("questions").innerHTML="The Galilean moons orbit what planet?";
+$("#c81").text("Neptune");
+$("#c82").text("Mercury");
+$("#c83").text("Jupiter");
+$("#check81").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q28").hide();
+});
+$("#check82").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q28").hide();
+});
+$("#check83").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q28").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q29"){
+$(".q29").show();
+document.getElementById("questions").innerHTML="What planet is closest to the Sun?";
+$("#c84").text("Mercury");
+$("#c85").text("Venus");
+$("#c86").text("Earth");
+$("#check85").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q29").hide();
+});
+$("#check86").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q29").hide();
+});
+$("#check84").click(function(){
+clearInterval(time);
+score=score+1;
+splice();
+$(".q29").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="q30"){
+$(".q30").show();
+document.getElementById("questions").innerHTML="What is the seventh planet from the Sun?";
+$("#c87").text("Saturn");
+$("#c88").text("Neptune");
+$("#c89").text("Uranus");
+$("#check87").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q30").hide();
+});
+$("#check88").click(function(){
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+$(".q30").hide();
+});
+$("#check89").click(function(){
+score=score+1;
+splice();
+clearInterval(time);
+$(".q30").hide();
+});
+var timer=15;
+var time=setInterval(function () {
+timer=timer-1;
+$("#showTimer").html(timer);
+if(timer==0){
+alert("Sorry! Your time is up.");
+window.localStorage.setItem("score",score);
+document.getElementById("tryAgain").innerHTML="Sorry! Game Over.";
+document.getElementById("score2").innerHTML= score;
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+clearInterval(time);
+}
+}, 1000);
+
+}else if(a=="" || qqq.length==0){
+qqq.splice(0,1);
+window.localStorage.setItem("score",score);
+var getScore=window.localStorage.getItem("score");
+document.getElementById("score").value=getScore;
+var getlastscore=window.localStorage.getItem("lastscore");
+document.getElementById("lastscore").value=getlastscore;
+var getUsername=window.localStorage.getItem("datauser");
+document.getElementById("username").value=getUsername;
+location.href="#saveDialog";
+}
+},1000);
+}
+
+
+$("#about").on("swipeleft",function(){
+	$.mobile.changePage( $("#hotlines"), { transition: "slide"} );
+});
+$("#hotlines").on("swiperight",function(){
+	$.mobile.changePage( $("#about"), { transition: "slide", reverse:"true"} );
+});
+
+</script>
+</body>
+</html>
